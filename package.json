@@ -1,0 +1,29 @@
+{
+  "name": "passwordgenerator",
+  "version": "1.0.0",
+  "description": "Password Generator with custom options",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aorelhas/passwordGenerator.git"
+  },
+  "keywords": [
+    "Password",
+    "Generator",
+    "pass",
+    "password"
+  ],
+  "author": "Carlos Orelhas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aorelhas/passwordGenerator/issues"
+  },
+  "homepage": "https://github.com/aorelhas/passwordGenerator#readme",
+  "dependencies": {
+    "clipboardy": "^2.3.0",
+    "commander": "^8.0.0"
+  }
+}
