@@ -5,15 +5,12 @@ const symbols = '!@#$%^&*_-+=';
 const generatePassword = (
   length = 10,
   hasSymbols = true,
-  hasNumbers = true,
-  hasChars = true
+  hasNumbers = true
 ) => {
   let letters = alpha;
-  let num = numbers;
 
   hasSymbols ? (letters += symbols) : '';
   hasNumbers ? (letters += numbers) : '';
-  hasChars ? (num += symbols) : '';
 
   return createPassword(length, letters);
 };

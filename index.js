@@ -2,7 +2,8 @@ const program = require('commander');
 const clipboardy = require('clipboardy');
 const options = program.opts();
 const generatePassword = require('./utils/generatePassword');
-const generate = console.log;
+const savePassword = require('./utils/savePassword');
+const generateLog = console.log;
 
 program
   .version('1.0.0')
@@ -14,12 +15,16 @@ program
   .option('-s, --save', 'Save your Password to generatedPassword.txt ')
   .option('-l, --length <number>', 'Password Length', '10')
   .option('-nn, --no-numbers', 'Remove Password Numbers')
-  .option('-nl, --no-letters', 'Remove Password Chars')
   .option('-ns, --no-symbols', 'Remove Password Symbols')
   .parse();
 
-const { save, numbers, chars, length, symbols } = options;
+const { save, numbers, length, symbols } = options;
 
-const createPassword = generatePassword(save, length, numbers, symbols, chars);
+const createPassword = generatePassword(save, length, numbers, symbols);
 
-generate(createPassword);
+if (save) savePassword(createPassword);
+
+clipboardy.writeSync(createPassword);
+
+generateLog(createPassword);
+generateLog('Password added to clipboard');
