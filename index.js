@@ -2,7 +2,7 @@ const program = require('commander');
 const clipboardy = require('clipboardy');
 const options = program.opts();
 const generatePassword = require('./utils/generatePassword');
-const generate = console.log();
+const generate = console.log;
 
 program
   .version('1.0.0')

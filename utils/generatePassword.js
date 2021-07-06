@@ -2,14 +2,20 @@ const alpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbers = '0123456789';
 const symbols = '!@#$%^&*_-+=';
 
-const generatePassword = (length, hasSymbols, hasNumbers, hasChars) => {
+const generatePassword = (
+  length = 10,
+  hasSymbols = true,
+  hasNumbers = true,
+  hasChars = true
+) => {
   let letters = alpha;
+  let num = numbers;
 
   hasSymbols ? (letters += symbols) : '';
   hasNumbers ? (letters += numbers) : '';
-  hasChars ? (symbols += numbers) : '';
+  hasChars ? (num += symbols) : '';
 
-  return (createPassword = (length, letters));
+  return createPassword(length, letters);
 };
 
 const createPassword = (length, letters) => {
